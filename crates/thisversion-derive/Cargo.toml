@@ -1,0 +1,31 @@
+[package]
+name         = "thisversion-derive"
+description  = "Derive macros for thisversion."
+version      = "0.1.0"
+edition      = "2024"
+rust-version = "1.88.0"
+license      = "MIT OR Apache-2.0"
+readme       = "README.md"
+repository   = "https://github.com/arifd/thisversion"
+homepage     = "https://arifd.github.io/thisversion/"
+keywords     = ["proc-macro", "derive", "migration", "schema", "versioning"]
+
+[lints]
+workspace = true
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro-crate = "3"
+proc-macro2 = { version = "1" }
+quote = { version = "1" }
+syn = { version = "3", default-features = false, features = [
+  "derive",
+  "parsing",
+  "printing",
+  "proc-macro",
+] }
+
+[dev-dependencies]
+syn = { version = "3", default-features = false, features = ["full"] }

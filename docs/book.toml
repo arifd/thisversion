@@ -1,0 +1,13 @@
+[book]
+title    = "thisversion"
+authors  = ["Arif Driessen"]
+language = "en"
+
+[rust]
+edition = "2024"
+
+[build]
+build-dir = "../target/book"
+
+[output.html]
+site-url = "/thisversion/"

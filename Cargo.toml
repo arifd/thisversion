@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members  = ["crates/thisversion", "crates/thisversion-derive"]
+
+[workspace.lints.rust]
+rust_2018_idioms = { level = "deny", priority = -1 }
+unsafe_code      = "forbid"
+
+[workspace.lints.clippy]
+dbg_macro             = "warn"
+print_stderr          = "warn"
+print_stdout          = "warn"
+inefficient_to_string = "warn"
+
+[profile.dev]
+debug = 0

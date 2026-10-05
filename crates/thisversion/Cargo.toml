@@ -1,0 +1,35 @@
+[package]
+name         = "thisversion"
+description  = "Keep persisted schema history explicit while your application uses a single current model."
+readme       = "../../README.md"
+version      = "0.1.0"
+edition      = "2024"
+rust-version = "1.88.0"
+license      = "MIT OR Apache-2.0"
+repository   = "https://github.com/arifd/thisversion"
+homepage     = "https://arifd.github.io/thisversion/"
+keywords     = ["migration", "schema", "persistence", "versioning", "serde"]
+
+[lints]
+workspace = true
+
+[features]
+default = []
+serde   = ["dep:serde"]
+alloc   = ["serde?/alloc"]
+
+[[example]]
+name              = "serde"
+required-features = ["serde"]
+
+[[example]]
+name              = "legacy"
+required-features = ["serde"]
+
+[dependencies]
+thisversion-derive = { version = "0.1.0", path = "../thisversion-derive" }
+serde              = { version = "1", default-features = false, optional = true }
+
+[dev-dependencies]
+serde      = { version = "1", default-features = false, features = ["derive"] }
+serde_json = { version = "1" }
