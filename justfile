@@ -19,13 +19,6 @@ ci:
 msrv:
     bash scripts/local/msrv.sh
 
-# Clear empty directories.
-clear:
-    find . -type d -empty \
-        -not -path './.git' \
-        -not -path './.git/*' \
-        -delete
-
 # Save a zip of all the files tracked by git to target/tmp/archive.zip:
 archive:
     git archive -o target/tmp/archive.zip HEAD
